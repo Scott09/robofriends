@@ -4,12 +4,10 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import 'tachyons';
 import App from './App';
+import SearchBox from './SearchBox';
 
 ReactDOM.render(
-  <div>
-    <h1>RoboFriends</h1>
     <App />
-  </div>
   , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
