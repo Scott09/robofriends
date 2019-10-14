@@ -3,6 +3,7 @@ import CardList from './CardList';
 import { robots } from './robots';
 import SearchBox from './SearchBox';
 import './App.css';
+import Axios from 'axios';
 
 
 
@@ -11,9 +12,18 @@ class App extends Component {
     super()
 
     this.state = {
-      robots: robots,
+      robots: [],
       searchfield: ''
     }
+  }
+
+  componentDidMount() {
+    Axios.get('https://jsonplaceholder.typicode.com/users')
+    .then(response => {
+      this.setState({robots: response.data})
+    }
+   )
+    
   }
 
   onSearchChange = (event) => {
