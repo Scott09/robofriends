@@ -4,6 +4,7 @@ import { robots } from '../robots';
 import SearchBox from '../components/SearchBox';
 import './App.css';
 import Axios from 'axios';
+import ErrorBoundary from '../components/ErrorBoundary'
 
 
 
@@ -41,7 +42,9 @@ class App extends Component {
       <div className="tc">
         <h1 className="f1">RoboFriends</h1>
         <SearchBox searchChange={this.onSearchChange}/>
-        <CardList robots= {filteredRobots} />
+        <ErrorBoundary>
+          <CardList robots= {filteredRobots} />
+        </ErrorBoundary>
       </div>
       
     );
